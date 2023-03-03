@@ -89,7 +89,6 @@ const RestaurantsList = (props) => {
     <div>
       <div className="row pb-1">
         <div className="input-group col-lg-4">
-          {" "}
           {/* 19.5 users can search for 3 different parameters, name, zipcode and cuisine */}
           <input
             type="text"
@@ -97,7 +96,7 @@ const RestaurantsList = (props) => {
             placeholder="Search by name"
             value={searchName}
             onChange={onChangeSearchName}
-          />{" "}
+          />
           {/* 19.6 theres an input that users can type to search by name, and a button to call the findByName function*/}
           <div className="input-group-append">
             <button
