@@ -12,7 +12,7 @@ class RestaurantDataService {
   }
 
   find(query, by = "name", page = 0) {
-    return http.get(`${by}=${query}&page=${page}`); // 18.4 find method takes the search term "query" (ex.01293), "by" will specify the search by zipcode, name or cuisine, and finally that
+    return http.get(`?${by}=${query}&page=${page}`); // 18.4 find method takes the search term "query" (ex.01293), "by" will specify the search by zipcode, name or cuisine, and finally that
   } // will add to the baseURL to do the GET request from that url to server
 
   createReview(data) {
@@ -23,8 +23,8 @@ class RestaurantDataService {
     return http.put("/review", data);
   }
 
-  deleteReview(id) {
-    return http.delete(`/review?id=${id}`);
+  deleteReview(id, userId) {
+    return http.delete(`/review?id=${id}`, {data:{user_id: userId}}); // 22.0 we modified the method, not best practice, only for this tutorial because we implemented a login dummy system
   }
 
   getCuisines(id) {
